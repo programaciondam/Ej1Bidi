@@ -38,10 +38,13 @@ public class Concesionario {
     private int pedirTipo() {
         String tipo;
         int posTipo;
-        do {
+
+        tipo = Alfanumericos.pedirAlfanumerico("Tipo");
+        posTipo = buscar(tipo);
+        while (posTipo == -1) {
             tipo = Alfanumericos.pedirAlfanumerico("Tipo");
             posTipo = buscar(tipo);
-        } while (posTipo == -1);
+        }
 
         return posTipo;
     }
