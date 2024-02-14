@@ -40,21 +40,25 @@ public class Concesionario {
         int posTipo;
         do {
             tipo = Alfanumericos.pedirAlfanumerico("Tipo");
-            posTipo = 0;
-            boolean encontrado = false;
-            while (!encontrado && posTipo < tipos.length) {
-                if (tipos[posTipo].equalsIgnoreCase(tipo)) {
-                    encontrado = true;
-                } else {
-                    posTipo++;
-                }
-            }
-            if (!encontrado) {
-                posTipo = -1;
-            }
+            posTipo = buscar(tipo);
         } while (posTipo == -1);
 
         return posTipo;
     }
 
+    private int buscar(String tipo) {
+        int posTipo = 0;
+        boolean encontrado = false;
+        while (!encontrado && posTipo < tipos.length) {
+            if (tipos[posTipo].equalsIgnoreCase(tipo)) {
+                encontrado = true;
+            } else {
+                posTipo++;
+            }
+        }
+        if (!encontrado) {
+            posTipo = -1;
+        }
+        return posTipo;
+    }
 }
