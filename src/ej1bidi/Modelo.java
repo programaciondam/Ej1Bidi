@@ -30,9 +30,14 @@ public class Modelo {
     public int getTipo() {
         return tipo;
     }
-     public void modificarVentadeUnMes(int mes,float importe){
+     public void setVentadeUnMes(int mes,float importe){
         ventas[mes]=importe;
     }
+
+    public void setVentas(float[] ventas) {
+        this.ventas = ventas;
+    }
+     
 
     
 }

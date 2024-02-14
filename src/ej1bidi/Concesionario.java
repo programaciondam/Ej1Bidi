@@ -6,6 +6,7 @@ package ej1bidi;
 
 import java.util.Arrays;
 import utilidades.Alfanumericos;
+import utilidades.Numero;
 
 /**
  *
@@ -63,5 +64,14 @@ public class Concesionario {
             posTipo = -1;
         }
         return posTipo;
+    }
+    public void pedirVentas(){
+        float importe;
+        for( int mes=0;mes <6;mes++)
+            for(int mo=0; mo<modelos.length;mo++)
+            {
+                importe=Numero.pedirNumeroReal("ventas", 0);
+                modelos[mo].setVentadeUnMes(mes, importe);
+            }
     }
 }

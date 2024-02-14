@@ -16,6 +16,7 @@ public class Ej1Bidi {
     public static void main(String[] args) {
       Concesionario c= new Concesionario(2);
       c.pedirDatos();
+      c.pedirVentas();
     }
     
 }
