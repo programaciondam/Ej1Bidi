@@ -15,7 +15,8 @@ import utilidades.Numero;
 public class Concesionario {
 
     Modelo[] modelos;
-    String[] tipos = {"Turismo", "TodoTerreno", "Deportivo"};
+    final String[] TIPOS= {"Turismo", "TodoTerreno", "Deportivo"};
+  final static String[]  MESES={"Enero","Feb","Mar","abr","may","Jun"};
 
     public Concesionario() {
         modelos = new Modelo[15];
@@ -53,8 +54,8 @@ public class Concesionario {
     private int buscar(String tipo) {
         int posTipo = 0;
         boolean encontrado = false;
-        while (!encontrado && posTipo < tipos.length) {
-            if (tipos[posTipo].equalsIgnoreCase(tipo)) {
+        while (!encontrado && posTipo < TIPOS.length) {
+            if (TIPOS[posTipo].equalsIgnoreCase(tipo)) {
                 encontrado = true;
             } else {
                 posTipo++;
@@ -68,10 +69,15 @@ public class Concesionario {
     public void pedirVentas(){
         float importe;
         for( int mes=0;mes <6;mes++)
+        {
+            System.out.println("Ventas del mes "+MESES[mes]);
+        
             for(int mo=0; mo<modelos.length;mo++)
             {
+                System.out.println("Del modelo: "+modelos[mo].getDenominacion());
                 importe=Numero.pedirNumeroReal("ventas", 0);
                 modelos[mo].setVentadeUnMes(mes, importe);
             }
+        }
     }
 }
