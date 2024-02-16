@@ -26,18 +26,26 @@ public class Modelo {
        public float[] getVentas() {
         return ventas;
     }
+       public float getUnaVenta(int mes){
+           return ventas[mes];
+       }
    
     public int getTipo() {
         return tipo;
     }
-     public void setVentadeUnMes(int mes,float importe){
-        ventas[mes]=importe;
+    public void setVentadeUnMes(int mes, float importe) {
+        ventas[mes] = importe;
     }
 
     public void setVentas(float[] ventas) {
         this.ventas = ventas;
     }
-     
+     public float sumar(int a, int b){
+         float suma=0;
+         for ( int m=a; m<b;m++)
+             suma=suma+ventas[m];
+         return suma;
+     }
 
     
 }

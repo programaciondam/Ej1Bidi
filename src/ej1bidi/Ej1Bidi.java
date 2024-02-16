@@ -14,9 +14,10 @@ public class Ej1Bidi {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-      Concesionario c= new Concesionario(2);
+      Concesionario c= new Concesionario(3);
       c.pedirDatos();
       c.pedirVentas();
+      c.informe();
     }
     
 }
